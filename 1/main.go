@@ -58,7 +58,14 @@ func main() {
 	)
 	fmt.Printf("Concatenated string is: %s\n", concatenatedString)
 	fmt.Printf("#  Print variables' types  =========================================<\n\n")
+
 	fmt.Printf("#  Print concatenated string as runes  =============================>\n")
-	fmt.Printf("Here goes concatenated string as rune slice:\n  - %q\n", utils.StringToRunes(concatenatedString))
+	concatenatedStringAsRunes := utils.StringToRunes(concatenatedString)
+	fmt.Printf("Here goes concatenated string as rune slice:\n  - %q\n", concatenatedStringAsRunes)
 	fmt.Printf("#  Print concatenated string as runes  =============================<\n\n")
+
+	fmt.Printf("#  Print SHA256 hached and salted concatenated string  =============>\n")
+	hachedAndSaltedString := utils.HashRunesWithSalt(concatenatedStringAsRunes)
+	fmt.Printf("Here goes SHA256 hached and salted concatenated string:\n  - %v\n", hachedAndSaltedString)
+	fmt.Printf("#  Print SHA256 hached and salted concatenated string  =============<\n\n")
 }
