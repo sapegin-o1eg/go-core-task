@@ -5,14 +5,26 @@ import (
 )
 
 func GetSomeIntegerNumbers() []int {
-	var firstNumIntInDecimalNotation int = 1
-	var secondNumIntInDecimalNotation int = 2
-	var thirdNumIntInDecimalNotation int = 3
+	var firstNumIntInDecimalNotation = 1
+	var secondNumIntInDecimalNotation = 2
+	var thirdNumIntInDecimalNotation = 3
+	var firstNumIntInOctalNotation = 0o4
+	var secondNumIntIOctalNotation = 0o5
+	var thirdNumIntInOctalNotation = 0o6
+	var firstNumIntInHexNotation = 0x7
+	var secondNumIntIHexNotation = 0x8
+	var thirdNumIntInHexNotation = 0x9
 
 	return []int{
 		firstNumIntInDecimalNotation,
 		secondNumIntInDecimalNotation,
 		thirdNumIntInDecimalNotation,
+		firstNumIntInOctalNotation,
+		secondNumIntIOctalNotation,
+		thirdNumIntInOctalNotation,
+		firstNumIntInHexNotation,
+		secondNumIntIHexNotation,
+		thirdNumIntInHexNotation,
 	}
 }
 
@@ -38,7 +50,7 @@ func GetSomeBooleans() (FirstBoolean, SecondBoolean bool) {
 	FirstBoolean = true
 	SecondBoolean = false
 
-	// explicit retuen
+	// explicit return
 	return FirstBoolean, SecondBoolean
 }
 

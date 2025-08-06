@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	// assigne vars and print them out
+	// assign vars and print them out
 	fmt.Printf("#  Print assigned variables  =======================================>\n")
 	someIntegerNumbers := utils.GetSomeIntegerNumbers()
 	fmt.Printf("Got array of integer numbers:\n  - %v\n", someIntegerNumbers)
@@ -18,7 +18,7 @@ func main() {
 	fmt.Printf("Got strings:\n  - %v\n  - %v\n", someStringOne, someStringTwo)
 
 	someBooleanOne, someBooleanTwo := utils.GetSomeBooleans()
-	fmt.Printf("Got boleans:\n  - %v\n  - %v\n", someBooleanOne, someBooleanTwo)
+	fmt.Printf("Got booleans:\n  - %v\n  - %v\n", someBooleanOne, someBooleanTwo)
 
 	someComplex64Numbers := utils.GetSomeComplex64Numbers()
 	fmt.Printf("Got complex64 numbers:\n  - %v\n  - %v\n", someComplex64Numbers.First, someComplex64Numbers.Second)
@@ -64,8 +64,8 @@ func main() {
 	fmt.Printf("Here goes concatenated string as rune slice:\n  - %q\n", concatenatedStringAsRunes)
 	fmt.Printf("#  Print concatenated string as runes  =============================<\n\n")
 
-	fmt.Printf("#  Print SHA256 hached and salted concatenated string  =============>\n")
-	hachedAndSaltedString := utils.HashRunesWithSalt(concatenatedStringAsRunes)
-	fmt.Printf("Here goes SHA256 hached and salted concatenated string:\n  - %v\n", hachedAndSaltedString)
-	fmt.Printf("#  Print SHA256 hached and salted concatenated string  =============<\n\n")
+	fmt.Printf("#  Print SHA256 hashed and salted concatenated string  =============>\n")
+	hashedAndSaltedString := utils.HashRunesWithSalt(concatenatedStringAsRunes)
+	fmt.Printf("Here goes SHA256 hashed and salted concatenated string:\n  - %v\n", hashedAndSaltedString)
+	fmt.Printf("#  Print SHA256 hashed and salted concatenated string  =============<\n\n")
 }
