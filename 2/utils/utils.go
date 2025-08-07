@@ -54,3 +54,12 @@ func SliceExample2(s []int, verbose ...bool) []int {
 	}
 	return evenNumSlice
 }
+
+func AddElements(s []int, values ...int) []int {
+	newSlice := make([]int, len(s), len(s)+len(values))
+	copy(newSlice, s)
+	for _, value := range values {
+		newSlice = append(newSlice, value)
+	}
+	return newSlice
+}
