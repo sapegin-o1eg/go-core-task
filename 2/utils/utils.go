@@ -74,7 +74,11 @@ func CopySlice(s []int) []int {
 }
 
 func RemoveElements(s []int, indexesForRemoval ...int) []int {
-	newSlice := make([]int, 0, len(s)-len(indexesForRemoval))
+	capacity := len(s) - len(indexesForRemoval)
+	if capacity < 0 {
+		capacity = 0
+	}
+	newSlice := make([]int, 0, capacity)
 	for index, value := range s {
 		if !slices.Contains(indexesForRemoval, index) {
 			newSlice = append(newSlice, value)
