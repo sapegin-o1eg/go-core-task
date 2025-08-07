@@ -1,55 +1,22 @@
 package main
 
-import "fmt"
-
-type StringIntMap struct {
-	m map[string]int
-}
-
-func NewStringIntMap() *StringIntMap {
-	return &StringIntMap{
-		m: make(map[string]int),
-	}
-}
-
-func (sm *StringIntMap) Add(key string, value int) {
-	sm.m[key] = value
-}
-
-func (sm *StringIntMap) Delete(key string) {
-	delete(sm.m, key)
-}
-
-func (sm *StringIntMap) Copy() map[string]int {
-	copy := make(map[string]int, len(sm.m))
-	for key, value := range sm.m {
-		copy[key] = value
-	}
-	return copy
-}
-
-func (sm *StringIntMap) Get(key string) (value int, ok bool) {
-	value, ok = sm.m[key]
-	return
-}
-
-func (sm *StringIntMap) Exists(key string) bool {
-	_, ok := sm.m[key]
-	return ok
-}
+import (
+	"fmt"
+	"task3/utils"
+)
 
 func main() {
-	sm1 := NewStringIntMap()
+	sm1 := utils.NewStringIntMap()
 
 	// Different output formats:
 	fmt.Printf("[sm1] Standard output: %v\n", sm1)
 	fmt.Printf("[sm1] Without pointer (dereference): %v\n", *sm1)
-	fmt.Printf("[sm1] Only map content: %v\n", sm1.m)
+	fmt.Printf("[sm1] Only map content: %v\n", sm1.M)
 	fmt.Printf("[sm1] Pretty output: %+v\n", sm1)
 	fmt.Printf("[sm1] Detailed output: %#v\n", sm1)
 
 	sm1.Add("a", 1)
-	fmt.Printf("[sm1] After adding element: %+v\n", sm1.m)
+	fmt.Printf("[sm1] After adding element: %+v\n", sm1.M)
 	sm1.Add("b", 2)
 	sm1.Add("c", 3)
 	sm1.Add("d", 4)
@@ -60,10 +27,10 @@ func main() {
 	sm1.Add("i", 9)
 	sm1.Add("j", 10)
 	sm1.Add("k", 11)
-	fmt.Printf("[sm1] After adding elements: %+v\n", sm1.m)
+	fmt.Printf("[sm1] After adding elements: %+v\n", sm1.M)
 
-	sm1.Delete("k")
-	fmt.Printf("[sm1] After deleting key k: %+v\n", sm1.m)
+	sm1.Remove("k")
+	fmt.Printf("[sm1] After deleting key k: %+v\n", sm1.M)
 
 	sm2 := sm1.Copy()
 	fmt.Printf("[sm2] Copy of sm1: %+v\n", sm2)
