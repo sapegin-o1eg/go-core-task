@@ -63,3 +63,9 @@ func AddElements(s []int, values ...int) []int {
 	}
 	return newSlice
 }
+
+func CopySlice(s []int) []int {
+	newSlice := make([]int, len(s))
+	copy(newSlice, s)
+	return newSlice
+}
