@@ -1,6 +1,9 @@
 package utils
 
-import "fmt"
+import (
+	"fmt"
+	"slices"
+)
 
 func SliceExample1(s []int, verbose ...bool) []int {
 	// lets make this func memory efficient
@@ -67,5 +70,15 @@ func AddElements(s []int, values ...int) []int {
 func CopySlice(s []int) []int {
 	newSlice := make([]int, len(s))
 	copy(newSlice, s)
+	return newSlice
+}
+
+func RemoveElements(s []int, indexesForRemoval ...int) []int {
+	newSlice := make([]int, 0, len(s)-len(indexesForRemoval))
+	for index, value := range s {
+		if !slices.Contains(indexesForRemoval, index) {
+			newSlice = append(newSlice, value)
+		}
+	}
 	return newSlice
 }

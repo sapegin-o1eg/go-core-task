@@ -32,4 +32,9 @@ func main() {
 	originalSlice[2] = 1000000000
 	fmt.Printf("CopySlice: originalSlice: %v\n", originalSlice)
 	fmt.Printf("CopySlice: copiedSlice: %v\n\n\n", copiedSlice)
+
+	fmt.Printf("RemoveElements: originalSlice: %v\n", originalSlice)
+	removedSlice := utils.RemoveElements(originalSlice, 0, 1, 2)
+	fmt.Printf("RemoveElements: removedSlice: %v\n", removedSlice)
+	fmt.Printf("RemoveElements: originalSlice: %v\n\n\n", originalSlice)
 }
