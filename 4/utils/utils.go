@@ -1,11 +1,14 @@
 package utils
 
 func Difference(source, exclude []string) []string {
-	if len(source) == 0 {
+	switch {
+	case source == nil:
 		return []string{}
-	}
-
-	if len(exclude) == 0 {
+	case exclude == nil:
+		return source
+	case len(source) == 0:
+		return []string{}
+	case len(exclude) == 0:
 		return source
 	}
 

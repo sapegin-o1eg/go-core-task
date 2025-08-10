@@ -6,7 +6,7 @@ import (
 )
 
 func TestDifference(t *testing.T) {
-	testsWithoutPassingRemoveDuplicates := []struct {
+	tests := []struct {
 		name    string
 		source  []string
 		exclude []string
@@ -36,9 +36,27 @@ func TestDifference(t *testing.T) {
 			exclude: []string{},
 			want:    []string{},
 		},
+		{
+			name:    "Test nil source",
+			source:  nil,
+			exclude: []string{"banana", "date", "fig"},
+			want:    []string{},
+		},
+		{
+			name:    "Test nil exclude",
+			source:  []string{"apple", "banana", "cherry"},
+			exclude: nil,
+			want:    []string{"apple", "banana", "cherry"},
+		},
+		{
+			name:    "Test both nil",
+			source:  nil,
+			exclude: nil,
+			want:    []string{},
+		},
 	}
 
-	for _, tt := range testsWithoutPassingRemoveDuplicates {
+	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got := Difference(tt.source, tt.exclude)
 			if !reflect.DeepEqual(got, tt.want) {

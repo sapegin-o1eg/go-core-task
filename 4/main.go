@@ -12,5 +12,9 @@ func main() {
 	fmt.Printf("Slice1: %+v\n", slice1)
 	fmt.Printf("Slice2: %+v\n\n\n", slice2)
 
-	fmt.Printf("utils.Difference: %+v\n", utils.Difference(slice1, slice2))
+	fmt.Printf("Difference(slice1, slice2): %+v\n", utils.Difference(slice1, slice2))
+
+	fmt.Printf("Difference(nil, slice2): %+v\n", utils.Difference(nil, slice2))
+	fmt.Printf("Difference(slice1, nil): %+v\n", utils.Difference(slice1, nil))
+	fmt.Printf("Difference(nil, nil): %+v\n", utils.Difference(nil, nil))
 }
