@@ -13,5 +13,4 @@ func main() {
 	fmt.Printf("Slice2: %+v\n\n\n", slice2)
 
 	fmt.Printf("utils.Difference: %+v\n", utils.Difference(slice1, slice2))
-	fmt.Printf("utils.Difference(only unique items): %+v\n", utils.Difference(slice1, slice2, true))
 }
